@@ -1,7 +1,7 @@
 
 # Standalone Deployment
 
-Single instance installation
+Single instance installation without TLS enabled
 
 ```
 oc new-project hashicorp
@@ -69,3 +69,15 @@ vault operator unseal $KEYS
 ```
 vault secrets enable -path=secret kv
 ```
+
+## Fetch vault hostname
+
+From your local environment: 
+
+```
+echo http://$(oc get route vault --no-headers -o custom-columns=HOST:.spec.host)
+```
+
+Use the above command result as vault host name and port 80 while configuring KMS in OCS storage cluster creation
+
+
