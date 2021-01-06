@@ -78,7 +78,7 @@ From your local environment:
 echo http://$(oc get route vault --no-headers -o custom-columns=HOST:.spec.host)
 ```
 
-# OCS storage cluster creation KMS settings:
+# OCS storage cluster creation KMS settings in UI:
 
 ```
 Address: (vault host name with http protocol (ex: http://vault-hashicorp.apps))
