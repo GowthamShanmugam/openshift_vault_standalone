@@ -39,7 +39,7 @@ oc adm  pod-network make-projects-global hashicorp
 POD=$(oc get pods -lapp.kubernetes.io/name=vault --no-headers -o custom-columns=NAME:.metadata.name)
 oc rsh $POD
 
-vault operator init --tls-skip-verify -key-shares=1 -key-threshold=1
+vault operator init -key-shares=1 -key-threshold=1
 ```
 
 Save the `Unseal Key 1` and the `Initial Root Token`:
@@ -61,5 +61,11 @@ export VAULT_TOKEN=$ROOT_TOKEN
 ## Unseal Vault
 
 ```
-vault operator unseal --tls-skip-verify $KEYS
+vault operator unseal $KEYS
+```
+
+## Enable a key/value secrets engine
+
+```
+vault secrets enable -path=secret kv
 ```
