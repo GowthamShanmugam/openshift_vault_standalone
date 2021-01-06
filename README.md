@@ -24,15 +24,6 @@ The following kubernetes components will be created:
 > vault-server-binding ClusterRoleBinding allows vault service account to leverage Kubernetes oauth with the oauth-delegator ClusterRole
 >
 
->
-> In case of OpenShift SDN Multitenant
->
-
-```
-oc adm  pod-network make-projects-global hashicorp
-```
-
-
 ## Initialize Vault
 
 ```
