@@ -6,7 +6,7 @@ Single instance installation
 ```
 oc new-project hashicorp
 
-oc apply -f ./vault/standalone/install/
+oc apply -f ./install/
 ```
 
 The following kubernetes components will be created:
