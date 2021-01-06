@@ -78,6 +78,16 @@ From your local environment:
 echo http://$(oc get route vault --no-headers -o custom-columns=HOST:.spec.host)
 ```
 
-Use the above command result as vault host name and port 80 while configuring KMS in OCS storage cluster creation
+# OCS storage cluster creation KMS settings:
+
+Address: (vault host name with http protocol (ex: http://vault-hashicorp.apps))
+Port: 80
+Token: (Vault token)
+
+In Advanced Settings:
+
+Backend Path: secret
+
+  
 
 
